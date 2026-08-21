@@ -179,10 +179,11 @@ footer>p { margin:0; justify-self:end; color:#777a80; font-size:9px; }
 .technique-copy h2 { margin:0 0 26px; font:900 clamp(38px,4.8vw,72px)/.98 "Arial Black",Arial; letter-spacing:-.055em; text-transform:uppercase; }
 .technique-copy>p { color:#686c72; font-size:15px; line-height:1.8; }
 .benefit-list { margin-top:36px; border-top:1px solid var(--line); }
-.benefit-list div { display:grid; grid-template-columns:38px 1fr; gap:16px; padding:22px 0; border-bottom:1px solid var(--line); }
-.benefit-list span { color:var(--accent); font-size:10px; font-weight:900; }
-.benefit-list strong { display:block; margin-bottom:7px; font-size:13px; }
-.benefit-list p { margin:0; color:#73777d; font-size:12px; line-height:1.6; }
+.benefit-list>div { display:grid; grid-template-columns:44px minmax(0,1fr); align-items:start; gap:18px; padding:22px 0; border-bottom:1px solid var(--line); }
+.benefit-list>div>span { padding-top:2px; color:var(--accent); font-size:10px; font-weight:900; }
+.benefit-list>div>div { min-width:0; }
+.benefit-list strong { display:block; margin:0 0 8px; font-size:13px; line-height:1.35; }
+.benefit-list p { margin:0; color:#73777d; font-size:12px; line-height:1.65; }
 
 .range-intro { max-width:900px; margin:0 auto; text-align:center; }
 .range-intro h2 { margin:0; font:900 clamp(42px,5.8vw,82px)/.94 "Arial Black",Arial; letter-spacing:-.06em; text-transform:uppercase; }
@@ -205,6 +206,35 @@ footer>p { margin:0; justify-self:end; color:#777a80; font-size:9px; }
 .range-note { margin-top:28px; padding:26px 30px; display:flex; align-items:center; justify-content:space-between; gap:30px; color:#fff; background:var(--ink); }
 .range-note strong { font:900 17px/1 "Arial Black",Arial; text-transform:uppercase; }
 .range-note p { max-width:690px; margin:0; color:#acafb5; font-size:12px; line-height:1.6; }
+
+/* Nos clubs */
+.clubs-hero-media { display:flex; align-items:center; justify-content:center; }
+.clubs-hero-media img { border:0; box-shadow:none; object-fit:contain; transform:rotate(-6deg); filter:drop-shadow(0 34px 30px rgba(0,0,0,.5)); }
+.clubs-section { background:#ece9e2; }
+.club-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:18px; }
+.club-card { position:relative; min-height:560px; overflow:hidden; isolation:isolate; color:#fff; background:#0d1728; }
+.club-card::before { content:""; position:absolute; inset:0; z-index:-2; background:radial-gradient(circle at 68% 24%,rgba(85,137,224,.44),transparent 34%),linear-gradient(145deg,#07101f,#0b2349); }
+.club-card::after { content:""; position:absolute; inset:0; z-index:-1; opacity:.32; background-image:linear-gradient(rgba(255,255,255,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.05) 1px,transparent 1px); background-size:44px 44px; }
+.club-card-red::before { background:radial-gradient(circle at 70% 22%,rgba(242,68,68,.5),transparent 34%),linear-gradient(145deg,#220809,#72151b); }
+.club-card-aubiet::before,.club-card-esr::before { background:radial-gradient(circle at 66% 22%,rgba(255,255,255,.38),transparent 32%),linear-gradient(145deg,#092a68,#1b5cc2); }
+.club-card-cosmo::before { background:radial-gradient(circle at 68% 22%,rgba(255,121,62,.48),transparent 32%),linear-gradient(145deg,#68110d,#d93c20); }
+.club-card-supernova::before { background:radial-gradient(circle at 68% 22%,rgba(211,174,72,.5),transparent 32%),linear-gradient(145deg,#15131c,#5d4b18); }
+.club-card-visual { height:465px; padding:18px 15px 0; display:flex; align-items:center; justify-content:center; }
+.club-card-visual img { width:100%; height:100%; object-fit:contain; transform:rotate(-5deg) scale(.98); filter:drop-shadow(0 28px 22px rgba(0,0,0,.42)); transition:transform .4s; }
+.club-card:nth-child(even) .club-card-visual img { transform:rotate(5deg) scale(.98); }
+.club-card:hover .club-card-visual img { transform:rotate(-2deg) translateY(-8px) scale(1.025); }
+.club-card-copy { position:absolute; left:25px; right:25px; bottom:24px; z-index:2; }
+.club-card-copy span { display:block; margin-bottom:9px; color:rgba(255,255,255,.7); font-size:8px; font-weight:900; letter-spacing:.17em; text-transform:uppercase; }
+.club-card-copy h3 { margin:0; font:900 22px/1 "Arial Black",Arial; text-transform:uppercase; }
+.worn-grid { display:grid; grid-template-columns:1fr 1fr; gap:18px; }
+.worn-card { position:relative; min-height:720px; overflow:hidden; background:#081a38; }
+.worn-card::after { content:""; position:absolute; inset:0; background:linear-gradient(to top,rgba(4,7,12,.9),transparent 58%); }
+.worn-card img { width:100%; height:100%; min-height:720px; object-fit:contain; object-position:center top; }
+.worn-card>div { position:absolute; z-index:2; left:34px; right:34px; bottom:34px; }
+.worn-card span { font-size:9px; font-weight:900; letter-spacing:.17em; }
+.worn-card h3 { margin:10px 0 12px; font:900 clamp(48px,6vw,78px)/.9 "Arial Black",Arial; }
+.worn-card p { max-width:420px; margin:0; color:rgba(255,255,255,.76); font-size:12px; line-height:1.65; }
+.worn-cosmo { background:linear-gradient(145deg,#120b11,#3d1210); }
 
 @media (max-width:1250px) {
   .desktop-nav { display:none; }
@@ -231,6 +261,8 @@ footer>p { margin:0; justify-self:end; color:#777a80; font-size:9px; }
   .technique-image,.technique-image img { min-height:520px; }
   .products-grid { grid-template-columns:1fr 1fr; }
   .product-card.feature-product { grid-column:span 2; }
+  .club-grid { grid-template-columns:1fr 1fr; }
+  .worn-card,.worn-card img { min-height:640px; }
 }
 @media (max-width:760px) {
   .site-header { min-height:72px; padding:0 20px; }
@@ -291,5 +323,10 @@ footer>p { margin:0; justify-self:end; color:#777a80; font-size:9px; }
   .product-card.feature-product .product-visual { min-height:340px; }
   .product-visual { height:320px; }
   .range-note { align-items:flex-start; flex-direction:column; }
+  .club-grid,.worn-grid { grid-template-columns:1fr; }
+  .club-card { min-height:520px; }
+  .club-card-visual { height:430px; }
+  .worn-card,.worn-card img { min-height:560px; }
+  .worn-card>div { left:24px; right:24px; bottom:24px; }
 }
 @media (prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } *,*::before,*::after { transition-duration:.01ms!important; } }
